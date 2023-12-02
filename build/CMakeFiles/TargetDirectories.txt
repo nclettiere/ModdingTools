@@ -1,3 +1,0 @@
-C:/Users/Poffinsky/dev/projects/ModdingTools/build/CMakeFiles/pz_symlink.dir
-C:/Users/Poffinsky/dev/projects/ModdingTools/build/CMakeFiles/edit_cache.dir
-C:/Users/Poffinsky/dev/projects/ModdingTools/build/CMakeFiles/rebuild_cache.dir

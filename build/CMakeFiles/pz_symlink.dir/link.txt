@@ -1,3 +1,0 @@
-C:\Users\Poffinsky\scoop\apps\cmake\3.27.0\bin\cmake.exe -E rm -f CMakeFiles\pz_symlink.dir/objects.a
-C:\Users\Poffinsky\dev\tools\llvm-mingw-20231114-ucrt-x86_64\bin\llvm-ar.exe qc CMakeFiles\pz_symlink.dir/objects.a @CMakeFiles\pz_symlink.dir\objects1.rsp
-C:\Users\Poffinsky\dev\tools\llvm-mingw-20231114-ucrt-x86_64\bin\clang++.exe -g -Wl,--whole-archive CMakeFiles\pz_symlink.dir/objects.a -Wl,--no-whole-archive -o bin\pz_symlink.exe -Wl,--out-implib,lib\libpz_symlink.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\pz_symlink.dir\linkLibs.rsp
