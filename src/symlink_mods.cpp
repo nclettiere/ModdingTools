@@ -32,6 +32,20 @@ void deleteFolders(const fs::path& directoryPath) {
 int CreateSymbolicLinkInFolder(const std::string& targetDirectory, const std::string& linkDirectory) {
 	fs::path sourceFolder = targetDirectory;
     fs::path targetFolder = linkDirectory;
+
+	if(!fs::exists(sourceFolder))
+	{
+		errno = ENOENT;
+		lwlog_crit_t("La ruta %s no existe.", targetDirectory.c_str());
+		return errno;
+	}
+
+	if(!fs::exists(targetFolder))
+	{
+		errno = ENOENT;
+		lwlog_crit_t("La ruta %s no existe.", linkDirectory.c_str());
+		return errno;
+	}
 	
 	deleteFolders(targetFolder);
 	
@@ -79,6 +93,7 @@ int main(int argc, char* argv[]) {
 	printf(BANNER);
     
     if (argc != 3) {
+		errno = EINVAL;
 		lwlog_emerg("Argumentos invalidos.");
         printf("Usage: symlink.exe \"<source_folder>\" \"<destination_folder>\"\n");
         return 1;

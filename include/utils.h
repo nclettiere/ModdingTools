@@ -71,8 +71,8 @@
 #define lwlog_err_t(M, ...)     do { fprintf(stderr, BROWN  "[ERR]     " NONE M YELLOW " errno: %s\n" NONE, ##__VA_ARGS__, clean_errno()); } while(0)
 #define lwlog_warning_t(M, ...) do { fprintf(stderr, BLUE   "[WARNING] " NONE M YELLOW " errno: %s\n" NONE, ##__VA_ARGS__, clean_errno()); } while(0)
 #define lwlog_notice_t(M, ...)  do { fprintf(stderr, CYAN   "[NOTICE]  " NONE M YELLOW " errno: %s\n" NONE, ##__VA_ARGS__, clean_errno()); } while(0)
-#define lwlog_info_t(M, ...)    do { fprintf(stderr, GREEN  "[INFO]    " NONE M "\n", __func__, __FILE__, __LINE__, ##__VA_ARGS__); } while(0)
-#define lwlog_debug_t(M, ...)   do { fprintf(stderr, GRAY   "[DEBUG]   " NONE M "\n", __func__, __FILE__, __LINE__, ##__VA_ARGS__); } while(0)
+#define lwlog_info_t(M, ...)    do { fprintf(stderr, GREEN  "[INFO]    " NONE M "\n", ##__VA_ARGS__); } while(0)
+#define lwlog_debug_t(M, ...)   do { fprintf(stderr, GRAY   "[DEBUG]   " NONE M "\n", ##__VA_ARGS__); } while(0)
 
 
 /* LOG_LEVEL controls */
