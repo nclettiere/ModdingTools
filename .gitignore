@@ -1,3 +1,9 @@
 bin
 bin/
 bin/*
+build
+build/
+build/*
+.vscode
+.vscode/
+.vscode/*
