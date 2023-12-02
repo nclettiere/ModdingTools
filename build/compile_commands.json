@@ -1,0 +1,8 @@
+[
+{
+  "directory": "C:/Users/Poffinsky/dev/projects/ModdingTools/build",
+  "command": "C:\\Users\\Poffinsky\\dev\\tools\\llvm-mingw-20231114-ucrt-x86_64\\bin\\clang++.exe  @CMakeFiles/pz_symlink.dir/includes_CXX.rsp -g -std=gnu++20 -static -o CMakeFiles\\pz_symlink.dir\\src\\symlink_mods.cpp.obj -c C:\\Users\\Poffinsky\\dev\\projects\\ModdingTools\\src\\symlink_mods.cpp",
+  "file": "C:/Users/Poffinsky/dev/projects/ModdingTools/src/symlink_mods.cpp",
+  "output": "CMakeFiles/pz_symlink.dir/src/symlink_mods.cpp.obj"
+}
+]
