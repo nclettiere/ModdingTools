@@ -15,19 +15,19 @@ project(
     LANGUAGES CXX
 )
 
-add_compile_options(-static)
+include(cmake/functions.cmake)
 
 add_executable(
     pz_symlink
     "src/symlink_mods.cpp"
 )
-
-target_include_directories(
-    pz_symlink
-    PRIVATE
-    "include"
+add_executable(
+    pz_fetch
+    "src/fetch_defaults.cpp"
 )
 
-target_link_libraries(pz_symlink -static)
+find_package(CURL REQUIRED)
+target_link_libraries(pz_fetch PRIVATE CURL::libcurl)
 
-target_compile_features(pz_symlink PUBLIC cxx_std_20)
+Configure_Target(pz_symlink)
+Configure_Target(pz_fetch)

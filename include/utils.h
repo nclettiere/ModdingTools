@@ -135,7 +135,7 @@
 #define lwlog_warning_t(M, ...)                                                                         \
   do                                                                                                    \
   {                                                                                                     \
-    fprintf(stderr, BLUE "[WARNING] " NONE M YELLOW " errno: %s\n" NONE, ##__VA_ARGS__, clean_errno()); \
+    fprintf(stderr, BLUE "[WARNING] " NONE M YELLOW "\n" NONE, ##__VA_ARGS__, clean_errno()); \
   } while (0)
 #define lwlog_notice_t(M, ...)                                                                          \
   do                                                                                                    \
@@ -259,7 +259,7 @@ constexpr const char *BANNER = R"V0G0N(
  |_|  |_|\___/ \__,_|\__,_|_|_| |_|\__, |    |_|\___/ \___/|_|___/
                                     __/ |                         
                                    |___/                          
-							by: Lactosa
+							by: Conaprole
 							
 
 )V0G0N";
