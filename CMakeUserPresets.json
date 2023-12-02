@@ -78,12 +78,12 @@
       "inherits": "rel-win64"
     },
     {
-      "name": "dev-linux",
+      "name": "linux-dev",
       "binaryDir": "${sourceDir}/build/dev-linux",
       "inherits": "dev-linux"
     },
     {
-      "name": "rel-linux",
+      "name": "linux-rel",
       "binaryDir": "${sourceDir}/build/rel-linux",
       "inherits": "rel-linux"
     },
@@ -108,13 +108,13 @@
     },
     {
       "name": "dev-linux",
-      "configurePreset": "dev-linux",
+      "configurePreset": "linux-dev",
       "configuration": "Debug",
       "jobs": 20
     },
     {
       "name": "rel-linux",
-      "configurePreset": "rel-linux",
+      "configurePreset": "linux-rel",
       "configuration": "MinSizeRel",
       "jobs": 20
     }
