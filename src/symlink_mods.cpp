@@ -80,7 +80,7 @@ int main(int argc, char* argv[]) {
     
     if (argc != 3) {
 		lwlog_emerg("Argumentos invalidos.");
-        printf("Usage: symlink.exe \"<source_folder>\" \"<destination_folder>\"");
+        printf("Usage: symlink.exe \"<source_folder>\" \"<destination_folder>\"\n");
         return 1;
     }
 
