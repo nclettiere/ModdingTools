@@ -32,6 +32,15 @@
       }
     },
     {
+      "name": "rel-linux",
+      "binaryDir": "${sourceDir}/build/rel-linux",
+      "inherits": ["rel-common", "ci-linux-rel"],
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "MinSizeRel",
+        "CMAKE_EXPORT_COMPILE_COMMANDS": "OFF"
+      }
+    },
+    {
       "name": "dev-darwin",
       "binaryDir": "${sourceDir}/build/dev-darwin",
       "inherits": ["dev-common", "ci-darwin"],
@@ -69,6 +78,16 @@
       "inherits": "rel-win64"
     },
     {
+      "name": "dev-linux",
+      "binaryDir": "${sourceDir}/build/dev-linux",
+      "inherits": "dev-linux"
+    },
+    {
+      "name": "rel-linux",
+      "binaryDir": "${sourceDir}/build/rel-linux",
+      "inherits": "rel-linux"
+    },
+    {
       "name": "dev-coverage",
       "binaryDir": "${sourceDir}/build/coverage",
       "inherits": ["dev-mode", "coverage-linux", "vcpkg"]
@@ -84,6 +103,18 @@
     {
       "name": "rel",
       "configurePreset": "rel",
+      "configuration": "MinSizeRel",
+      "jobs": 20
+    },
+    {
+      "name": "dev-linux",
+      "configurePreset": "dev-linux",
+      "configuration": "Debug",
+      "jobs": 20
+    },
+    {
+      "name": "rel-linux",
+      "configurePreset": "rel-linux",
       "configuration": "MinSizeRel",
       "jobs": 20
     }
