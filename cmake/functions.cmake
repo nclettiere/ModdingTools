@@ -28,6 +28,12 @@ function(Configure_Target TARGET_NAME)
         PRIVATE
         "include"
     )
-    target_link_libraries(${TARGET_NAME} PUBLIC -static)
+    if(WIN32)
+        target_link_libraries(${TARGET_NAME} PUBLIC -static)
+    else()
+        if(NOT ${TARGET_NAME} STREQUAL "pz_fetch")
+            target_link_libraries(${TARGET_NAME} PUBLIC -static)
+        endif()
+    endif()
     target_compile_features(${TARGET_NAME} PUBLIC cxx_std_20)
 endfunction()
