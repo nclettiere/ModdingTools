@@ -68,6 +68,24 @@
       }
     },
     {
+      "name": "dev-win64-gcc",
+      "binaryDir": "${sourceDir}/build/dev-win64-gcc",
+      "inherits": ["dev-common", "win-ninja-gcc-dev", "vcpkg-mingw-static"],
+      "environment": {
+        "UseMultiToolTask": "true",
+        "EnforceProcessCountAcrossBuilds": "true"
+      }
+    },
+    {
+      "name": "rel-win64-gcc",
+      "binaryDir": "${sourceDir}/build/rel-win64-gcc",
+      "inherits": ["rel-common", "win-ninja-gcc-rel", "vcpkg-mingw-static"],
+      "environment": {
+        "UseMultiToolTask": "true",
+        "EnforceProcessCountAcrossBuilds": "true"
+      }
+    },
+    {
       "name": "dev",
       "binaryDir": "${sourceDir}/build/dev",
       "inherits": "dev-win64"

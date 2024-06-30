@@ -92,8 +92,10 @@ bool DownloadFile(const std::string &url, const std::string &outputFilePath) {
 }
 
 void Logic(AppState &state, ScreenInteractive &screen) {
-  DownloadFile("https://github.com/nclettiere/ModdingTools/releases/download/0.1.5/pz_fetch-0.1.5",
-               "C:\\Users\\Mosnye\\dev\\projects\\bob.zip");
-  screen.PostEvent(Event::Custom);
-  state.currentAction = CurrentAction_AplyingPatches;
+  //DownloadFile("https://github.com/nclettiere/ModdingTools/releases/download/0.1.5/pz_fetch-0.1.5",
+  //             "C:\\Users\\Mosnye\\dev\\projects\\bob.zip");
+  //screen.PostEvent(Event::Custom);
+  //state.currentAction = CurrentAction_AplyingPatches;
+  
+  
 }

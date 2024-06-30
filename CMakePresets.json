@@ -127,7 +127,9 @@
       "inherits": ["flags-clang-win-dev", "ci-std"],
       "generator": "Ninja",
       "cacheVariables": {
-        "CMAKE_BUILD_TYPE": "Debug"
+        "CMAKE_BUILD_TYPE": "Debug",
+		"CMAKE_CXX_COMPILER": "clang",
+        "CMAKE_C_COMPILER": "clang++"
       },
       "hidden": true
 	},
@@ -136,7 +138,31 @@
       "inherits": ["flags-clang-win-rel", "ci-std"],
       "generator": "Ninja",
       "cacheVariables": {
-        "CMAKE_BUILD_TYPE": "MinSizeRel"
+        "CMAKE_BUILD_TYPE": "MinSizeRel",
+		"CMAKE_CXX_COMPILER": "clang",
+        "CMAKE_C_COMPILER": "clang++"
+      },
+      "hidden": true
+	},
+	{
+      "name": "win-ninja-gcc-dev",
+      "inherits": ["flags-clang-win-dev", "ci-std"],
+      "generator": "Ninja",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+		"CMAKE_CXX_COMPILER": "gcc",
+        "CMAKE_C_COMPILER": "g++"
+      },
+      "hidden": true
+	},
+	{
+      "name": "win-ninja-gcc-rel",
+      "inherits": ["flags-clang-win-rel", "ci-std"],
+      "generator": "Ninja",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "MinSizeRel",
+		"CMAKE_CXX_COMPILER": "gcc",
+        "CMAKE_C_COMPILER": "g++"
       },
       "hidden": true
 	},

@@ -11,6 +11,11 @@
     {
       "name": "ftxui",
       "version>=": "5.0.0"
+    },
+    {
+      "name": "wxwidgets",
+      "version>=": "3.2.5#1",
+	  "features": [ "webview" ]
     }
   ],
   "default-features": [],
