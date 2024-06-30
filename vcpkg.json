@@ -1,24 +1,21 @@
 {
   "name": "zui",
   "version-semver": "0.1.0",
+  "builtin-baseline": "9055f88ba53a99f51e3c733fe9c79703dc23d57d",
   "dependencies": [
     {
       "name": "curl",
-      "version>=": "8.3.0",
-      "features": [ "mbedtls" ],
-      "platform": "windows"
+      "features": [
+        "mbedtls"
+      ],
+      "platform": "windows",
+      "version>=": "8.3.0"
     },
     {
       "name": "ftxui",
       "version>=": "5.0.0"
-    },
-    {
-      "name": "wxwidgets",
-      "version>=": "3.2.5#1",
-	  "features": [ "webview" ]
     }
   ],
-  "default-features": [],
   "features": {
     "test": {
       "description": "Dependencies for testing",
@@ -29,6 +26,5 @@
         }
       ]
     }
-  },
-  "builtin-baseline": "9055f88ba53a99f51e3c733fe9c79703dc23d57d"
+  }
 }

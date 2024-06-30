@@ -1,4 +1,3 @@
-
 cmake_minimum_required(VERSION 3.14)
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
@@ -18,6 +17,11 @@ project(
 
 include(cmake/functions.cmake)
 
+
+set(WITH_WEBP OFF CACHE BOOL "" FORCE)
+set(WITH_OPENGL OFF CACHE BOOL "" FORCE)
+add_subdirectory(vendor/fox)
+
 add_executable(
     pz_symlink
     "src/symlink_mods.cpp"
@@ -31,13 +35,31 @@ add_executable(
     "src/pz_launcher.cpp"
     "src/launcher_ui.cpp"
 )
+add_executable(
+    pz_patcher
+    "src/pz_patcher.cpp"
+)
 
 find_package(CURL REQUIRED)
 find_package(ftxui CONFIG REQUIRED)
 
+#find_library(FOX_TOOLKIT
+#             NAMES libFOX-1.7
+#             PATHS vendor/foxtoolkit/lib
+#             NO_DEFAULT_PATH)
+#			 
+#if(NOT FOX_TOOLKIT)
+#    message(FATAL_ERROR "FOX_TOOLKIT precompiled static library not found!")
+#endif()
+
 #if(WIN32)
     target_link_libraries(pz_fetch PRIVATE CURL::libcurl)
     target_link_libraries(pz_launcher PRIVATE CURL::libcurl ftxui::dom ftxui::screen ftxui::component)
+	
+	
+	#target_include_directories(pz_patcher PRIVATE vendor/foxtoolkit/include/fox-1.7)
+    target_link_libraries(pz_patcher PRIVATE CURL::libcurl msimg32 winmm imm32 wsock32 gdi32 FOX)
+	
 ##else()
 #    target_link_libraries(pz_fetch PRIVATE ${CURL_LIBRARIES})
 #endif()
@@ -45,3 +67,4 @@ find_package(ftxui CONFIG REQUIRED)
 Configure_Target(pz_symlink)
 Configure_Target(pz_fetch)
 Configure_Target(pz_launcher)
+Configure_Target(pz_patcher)
