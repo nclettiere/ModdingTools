@@ -1,7 +1,7 @@
 #define NO_EXP10F
 #define NO_EXP10
 
-#include <fx.h>
+#include "fox-1.6/fx.h"
 
 #include <iostream>
 
@@ -18,21 +18,36 @@ public:
 
   enum {
     ID_HELLO = FXMainWindow::ID_LAST,
+    ID_HELLO2,
     ID_LAST
   };
+
+private:
+  FXHorizontalFrame *contents; // Content frame
+
+  FXTextField *sourceField;
+  FXTextField *targetField;
 };
 
 // Implement the message map for HelloWorldWindow
 FXDEFMAP(HelloWorldWindow) HelloWorldWindowMap[] = {
   FXMAPFUNC(SEL_COMMAND, HelloWorldWindow::ID_HELLO, HelloWorldWindow::onCmdHello),
+  FXMAPFUNC(SEL_COMMAND, HelloWorldWindow::ID_HELLO2, HelloWorldWindow::onCmdHello),
 };
 
 // Macro to implement the FXMainWindow interface
 FXIMPLEMENT(HelloWorldWindow, FXMainWindow, HelloWorldWindowMap, ARRAYNUMBER(HelloWorldWindowMap))
 
 HelloWorldWindow::HelloWorldWindow(FXApp* app) : FXMainWindow(app, "Hello World", nullptr, nullptr, DECOR_ALL, 0, 0, 400, 200) {
+  app->registerDragType("bob");
+
+  contents = new FXHorizontalFrame(this,LAYOUT_SIDE_TOP|LAYOUT_FILL_X|LAYOUT_FILL_Y,0,0,0,0, 0,0,0,0);
   // Create a button that sends the ID_HELLO message when clicked
-  new FXButton(this, "Hello, World!", nullptr, this, ID_HELLO, FRAME_THICK | FRAME_RAISED | LAYOUT_CENTER_X | LAYOUT_CENTER_Y);
+  new FXButton(contents, "Hello, World!", nullptr, this, ID_HELLO, FRAME_THICK | FRAME_RAISED | LAYOUT_CENTER_X | LAYOUT_CENTER_Y);
+  FXButton* btn2 = new FXButton(contents, "Hello, World 2!", nullptr, this, ID_HELLO2, FRAME_THICK | FRAME_RAISED | LAYOUT_CENTER_X | LAYOUT_CENTER_Y);
+
+  btn2->dropEnable();
+
 }
 
 void HelloWorldWindow::create() {

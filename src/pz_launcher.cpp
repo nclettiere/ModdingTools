@@ -97,5 +97,4 @@ void Logic(AppState &state, ScreenInteractive &screen) {
   //screen.PostEvent(Event::Custom);
   //state.currentAction = CurrentAction_AplyingPatches;
   
-  
 }
